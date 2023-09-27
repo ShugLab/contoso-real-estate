@@ -36,6 +36,9 @@ param stripeImageName string = ''
 param stripeServiceUrl string = ''
 
 @secure()
+param storageAccountKey string = ''
+
+@secure()
 param appKeys string
 @secure()
 param apiTokenSalt string
@@ -396,6 +399,7 @@ output SERVICE_STRIPE_URI string = stripe.outputs.SERVICE_STRIPE_URI
 output SERVICE_STRIPE_NAME string = stripe.outputs.SERVICE_STRIPE_NAME
 
 output STORAGE_ACCOUNT_NAME string = storageAccount.outputs.name
+output STORAGE_ACCOUNT_KEY string = storageAccount.outputs.key
 output STORAGE_CONTAINER_NAME string = storageContainerName
 output SERVICE_CMS_SERVER_HOST string = cmsDB.outputs.POSTGRES_DOMAIN_NAME
 

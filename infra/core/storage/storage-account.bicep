@@ -34,5 +34,8 @@ resource storage 'Microsoft.Storage/storageAccounts@2022-05-01' = {
   }
 }
 
+var keys = storage.listKeys()
+
 output name string = storage.name
+output key string = keys.keys[0].value
 output primaryEndpoints object = storage.properties.primaryEndpoints
